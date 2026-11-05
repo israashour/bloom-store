@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f6f0" />
+    <meta
+      name="description"
+      content="Bloom Store - Thoughtful finds for everyday living."
+    />
+    <title>Bloom Store | Thoughtful Living</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Tajawal:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/products.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+
+  <body>
+    <div class="announcement" data-i18n="announcement">
+      Thoughtful finds, made for everyday living.
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Bloom Store home">
+        <span class="brand-mark" aria-hidden="true">b.</span>
+        <span class="brand-copy">
+          <span class="brand-name">bloom</span>
+          <span class="brand-subtitle">STORE</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home" data-i18n="navHome">Home</a>
+        <a href="#products" data-i18n="navShop">Shop</a>
+        <a href="#about" data-i18n="navAbout">Our story</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          class="language-button"
+          id="languageToggle"
+          type="button"
+          aria-label="Switch language"
+        >
+          عربي
+        </button>
+
+        <button
+          class="cart-button"
+          id="openCart"
+          type="button"
+          aria-label="Open shopping cart"
+        >
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H6"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="10" cy="20" r="1.2" fill="currentColor" />
+            <circle cx="18" cy="20" r="1.2" fill="currentColor" />
+          </svg>
+          <span data-i18n="cart">Bag</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <span class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span data-i18n="heroEyebrow">A LITTLE MORE INTENTIONAL</span>
+          </span>
+
+          <h1 data-i18n="heroTitle">Find beauty in the <em>everyday.</em></h1>
+
+          <p data-i18n="heroDescription">
+            Thoughtfully chosen pieces to bring a little more calm, warmth and
+            joy into your everyday rituals.
+          </p>
+
+          <a class="primary-button" href="#products">
+            <span data-i18n="heroButton">Explore the collection</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <div class="hero-note">
+            <span class="hero-note-icon" aria-hidden="true">✳</span>
+            <span data-i18n="heroNote">Small things. Meaningful moments.</span>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="hero-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"
+              alt="Warm, calm and natural home interior"
+              class="hero-image"
+            />
+          </div>
+          <div class="hero-sticker">
+            <span class="sticker-flower" aria-hidden="true">✿</span>
+            <span data-i18n="heroSticker">Made for slow living</span>
+          </div>
+          <div class="hero-side-note" data-i18n="heroSideNote">
+            A softer kind of everyday.
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits" aria-label="Store benefits">
+        <div class="benefit">
+          <span class="benefit-icon" aria-hidden="true">✳</span>
+          <span data-i18n="benefit1">Thoughtfully selected</span>
+        </div>
+        <div class="benefit">
+          <span class="benefit-icon" aria-hidden="true">♡</span>
+          <span data-i18n="benefit2">Made for everyday joy</span>
+        </div>
+        <div class="benefit">
+          <span class="benefit-icon" aria-hidden="true">❋</span>
+          <span data-i18n="benefit3">Simple, timeless style</span>
+        </div>
+      </section>
+
+      <section class="shop-section section-shell" id="products">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow" data-i18n="shopEyebrow">THE BLOOM EDIT</span>
+            <h2 data-i18n="shopTitle">Little things you'll love.</h2>
+            <p data-i18n="shopDescription">
+              Everyday essentials, chosen with care.
+            </p>
+          </div>
+          <span class="product-total" id="productTotal">0 products</span>
+        </div>
+
+        <div class="shop-toolbar">
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle
+                cx="10.8"
+                cy="10.8"
+                r="6.8"
+                stroke="currentColor"
+                stroke-width="1.6"
+              />
+              <path
+                d="m16 16 4.2 4.2"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+            </svg>
+            <input
+              id="searchInput"
+              type="search"
+              data-i18n-placeholder="searchPlaceholder"
+              placeholder="Search for something lovely..."
+              autocomplete="off"
+            />
+            <button
+              id="clearSearch"
+              class="clear-search"
+              type="button"
+              aria-label="Clear search"
+              hidden
+            >
+              ×
+            </button>
+          </label>
+
+          <div class="toolbar-filters">
+            <label class="filter-field">
+              <span data-i18n="categoryLabel">Category</span>
+              <select id="categoryFilter" aria-label="Filter by category">
+                <option value="all" data-i18n="allCategories">
+                  All categories
+                </option>
+              </select>
+            </label>
+
+            <label class="filter-field">
+              <span data-i18n="sortLabel">Sort by</span>
+              <select id="sortFilter" aria-label="Sort products">
+                <option value="featured" data-i18n="sortFeatured">
+                  Featured
+                </option>
+                <option value="price-asc" data-i18n="sortPriceAsc">
+                  Price: low to high
+                </option>
+                <option value="price-desc" data-i18n="sortPriceDesc">
+                  Price: high to low
+                </option>
+                <option value="name" data-i18n="sortName">Name: A to Z</option>
+              </select>
+            </label>
+
+            <label class="filter-field price-filter">
+              <span data-i18n="maxPriceLabel">Max price</span>
+              <select id="priceFilter" aria-label="Filter by maximum price">
+                <option value="all" data-i18n="anyPrice">Any price</option>
+                <option value="15">15</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="active-filters" id="activeFilters" hidden>
+          <span id="resultsSummary"></span>
+          <button id="resetFilters" type="button" data-i18n="clearFilters">
+            Clear filters
+          </button>
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite">
+          <p class="loading-message" data-i18n="loading">Loading products...</p>
+        </div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <span aria-hidden="true">⌕</span>
+          <h3 data-i18n="emptyTitle">Nothing here just yet.</h3>
+          <p data-i18n="emptyDescription">
+            Try another search or clear your filters.
+          </p>
+          <button
+            class="secondary-button"
+            id="emptyReset"
+            type="button"
+            data-i18n="clearFilters"
+          >
+            Clear filters
+          </button>
+        </div>
+      </section>
+
+      <section class="story-section" id="about">
+        <div class="story-decoration" aria-hidden="true">✳</div>
+        <span class="eyebrow" data-i18n="storyEyebrow">A NOTE FROM BLOOM</span>
+        <h2 data-i18n="storyTitle">
+          Life doesn't need more things.<br />
+          Just the <em>right little things.</em>
+        </h2>
+        <p data-i18n="storyDescription">
+          Bloom is a little corner for thoughtful finds and everyday comforts.
+          We believe that small details can make ordinary moments feel a little
+          more special.
+        </p>
+        <a href="#products" class="text-link">
+          <span data-i18n="storyButton">Find your little something</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <section class="newsletter section-shell">
+        <div>
+          <span class="eyebrow" data-i18n="newsletterEyebrow"
+            >A LITTLE NOTE</span
+          >
+          <h2 data-i18n="newsletterTitle">A softer inbox.</h2>
+          <p data-i18n="newsletterDescription">
+            A demo signup form for future Bloom updates.
+          </p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <label
+            class="visually-hidden"
+            for="newsletterEmail"
+            data-i18n="emailLabel"
+            >Email address</label
+          >
+          <input
+            id="newsletterEmail"
+            type="email"
+            required
+            data-i18n-placeholder="emailPlaceholder"
+            placeholder="Your email address"
+          />
+          <button class="primary-button" type="submit">
+            <span data-i18n="subscribeButton">Join us</span>
+            <span aria-hidden="true">↗</span>
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home">
+        <span class="brand-mark" aria-hidden="true">b.</span>
+        <span class="brand-copy">
+          <span class="brand-name">bloom</span>
+          <span class="brand-subtitle">STORE</span>
+        </span>
+      </a>
+      <p data-i18n="footerText">A little more beauty in the everyday.</p>
+      <span class="footer-copy"
+        >© <span id="currentYear"></span> Bloom Store</span
+      >
+    </footer>
+
+    <!-- Shopping cart drawer -->
+    <div class="overlay" id="cartOverlay" hidden></div>
+
+    <aside
+      class="cart-drawer"
+      id="cartDrawer"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cartTitle"
+      aria-hidden="true"
+      inert
+    >
+      <div class="cart-header">
+        <div>
+          <span class="eyebrow" data-i18n="cartEyebrow">YOUR LITTLE FINDS</span>
+          <h2 id="cartTitle" data-i18n="cartTitle">Your bag</h2>
+        </div>
+        <button
+          class="icon-button"
+          id="closeCart"
+          type="button"
+          aria-label="Close shopping cart"
+        >
+          ×
+        </button>
+      </div>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-empty" id="cartEmpty">
+        <span aria-hidden="true">♡</span>
+        <h3 data-i18n="cartEmptyTitle">Your bag is taking a little rest.</h3>
+        <p data-i18n="cartEmptyDescription">
+          Find something lovely to bring home.
+        </p>
+        <button class="primary-button" id="continueShopping" type="button">
+          <span data-i18n="continueShopping">Continue shopping</span>
+          <span aria-hidden="true">↗</span>
+        </button>
+      </div>
+
+      <div class="cart-footer" id="cartFooter">
+        <div class="subtotal-row">
+          <span data-i18n="subtotal">Subtotal</span>
+          <strong id="cartSubtotal">$0.00</strong>
+        </div>
+        <p class="cart-disclaimer" data-i18n="shippingNote">
+          Shipping and taxes are not included in this demo.
+        </p>
+        <button
+          class="primary-button checkout-button"
+          id="checkoutButton"
+          type="button"
+        >
+          <span data-i18n="checkout">Proceed to checkout</span>
+          <span aria-hidden="true">↗</span>
+        </button>
+        <p class="demo-note" data-i18n="demoNote">
+          Demo store. No payment will be collected.
+        </p>
+      </div>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal" hidden>
+      <div class="checkout-backdrop" id="checkoutBackdrop"></div>
+
+      <section
+        class="checkout-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="checkoutTitle"
+      >
+        <header class="checkout-header">
+          <div>
+            <p class="checkout-eyebrow" data-i18n="checkoutEyebrow">
+              Almost yours
+            </p>
+            <h2 id="checkoutTitle" data-i18n="checkout">Complete your order</h2>
+          </div>
+
+          <button
+            type="button"
+            class="checkout-close"
+            id="closeCheckout"
+            aria-label="Close checkout"
+          >
+            &times;
+          </button>
+        </header>
+
+        <form id="checkoutForm">
+          <div class="checkout-content">
+            <section class="checkout-section">
+              <h3 data-i18n="customerDetails">Customer details</h3>
+
+              <label for="customerName" data-i18n="fullName"> Full name </label>
+              <input
+                id="customerName"
+                name="customerName"
+                type="text"
+                autocomplete="name"
+                required
+              />
+
+              <label for="customerPhone" data-i18n="phoneNumber">
+                Phone number
+              </label>
+              <input
+                id="customerPhone"
+                name="customerPhone"
+                type="tel"
+                autocomplete="tel"
+                required
+              />
+
+              <label for="customerEmail" data-i18n="emailOptional">
+                Email (optional)
+              </label>
+              <input
+                id="customerEmail"
+                name="customerEmail"
+                type="email"
+                autocomplete="email"
+              />
+            </section>
+
+            <section class="checkout-section">
+              <h3 data-i18n="deliveryAddress">Delivery address</h3>
+
+              <label for="customerCity" data-i18n="city">
+                City / Governorate
+              </label>
+              <input
+                id="customerCity"
+                name="customerCity"
+                autocomplete="address-level1"
+                required
+              />
+
+              <label for="customerArea" data-i18n="area"> Area </label>
+              <input id="customerArea" name="customerArea" required />
+
+              <label for="customerAddress" data-i18n="fullAddress">
+                Street and full address
+              </label>
+              <textarea
+                id="customerAddress"
+                name="customerAddress"
+                rows="3"
+                autocomplete="street-address"
+                required
+              ></textarea>
+
+              <label for="orderNotes" data-i18n="orderNotes">
+                Order notes (optional)
+              </label>
+              <textarea id="orderNotes" name="orderNotes" rows="2"></textarea>
+            </section>
+
+            <section class="checkout-section">
+              <h3 data-i18n="paymentMethod">Payment method</h3>
+
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="cod" checked />
+                <span data-i18n="cashOnDelivery"> Cash on delivery </span>
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="online" />
+                <span data-i18n="onlinePayment"> Electronic payment </span>
+              </label>
+
+              <p
+                class="checkout-payment-note"
+                id="onlinePaymentNote"
+                data-i18n="onlinePaymentNote"
+                hidden
+              >
+                Electronic payment will be available once a payment provider is
+                connected.
+              </p>
+            </section>
+
+            <section class="checkout-section">
+              <h3 data-i18n="orderSummary">Order summary</h3>
+
+              <div id="checkoutItems" class="checkout-items"></div>
+
+              <div class="checkout-total-row">
+                <span data-i18n="subtotal">Subtotal</span>
+                <strong id="checkoutSubtotal">0</strong>
+              </div>
+
+              <div class="checkout-total-row">
+                <span data-i18n="shipping">Shipping</span>
+                <strong id="checkoutShipping">—</strong>
+              </div>
+
+              <div class="checkout-total-row checkout-grand-total">
+                <span data-i18n="total">Total</span>
+                <strong id="checkoutTotal">0</strong>
+              </div>
+            </section>
+          </div>
+
+          <footer class="checkout-footer">
+            <button type="submit" class="checkout-submit" id="submitCheckout">
+              Continue to WhatsApp
+            </button>
+
+            <p data-i18n="checkoutSecureNote">
+              Review your details before sending your order.
+            </p>
+          </footer>
+        </form>
+
+        <!-- Portfolio Demo Order Confirmation -->
+        <section
+          id="demoConfirmation"
+          class="demo-confirmation"
+          aria-live="polite"
+          hidden
+        >
+          <div class="demo-success-icon" aria-hidden="true">✓</div>
+
+          <p class="checkout-eyebrow" data-i18n="demoBadge">Portfolio demo</p>
+
+          <h2 id="demoConfirmationTitle" data-i18n="demoSuccessTitle">
+            Your demo order is ready!
+          </h2>
+
+          <p id="demoConfirmationText" data-i18n="demoSuccessText">
+            No real order or payment has been submitted.
+          </p>
+
+          <div class="demo-reference">
+            <span data-i18n="demoOrderReference">Demo order reference</span>
+            <strong id="demoOrderReference"></strong>
+          </div>
+
+          <div class="demo-message-heading" data-i18n="demoMessageTitle">
+            WhatsApp message preview
+          </div>
+
+          <pre id="demoOrderMessage" class="demo-order-message"></pre>
+
+          <p id="demoPaymentNotice" class="checkout-payment-note"></p>
+
+          <button
+            type="button"
+            id="demoDone"
+            class="checkout-submit"
+            data-i18n="demoBackToStore"
+          >
+            Back to store
+          </button>
+        </section>
+      </section>
+    </div>
+
+    <dialog
+      id="productDetailsModal"
+      class="product-details-modal"
+      aria-labelledby="productDetailsTitle"
+    >
+      <div class="product-details-content">
+        <button
+          id="closeProductDetails"
+          class="product-details-close"
+          type="button"
+          aria-label="Close product details"
+        >
+          &times;
+        </button>
+
+        <div class="product-details-image-wrap">
+          <img
+            id="productDetailsImage"
+            class="product-details-image"
+            src=""
+            alt=""
+          />
+        </div>
+
+        <div class="product-details-info">
+          <span id="productDetailsCategory" class="product-category"></span>
+
+          <h2 id="productDetailsTitle"></h2>
+
+          <div class="product-details-price-row">
+            <span id="productDetailsPrice" class="product-price"></span>
+
+            <span
+              id="productDetailsOldPrice"
+              class="product-old-price"
+              hidden
+            ></span>
+          </div>
+
+          <div id="productDetailsRating" class="product-rating"></div>
+
+          <p
+            id="productDetailsDescription"
+            class="product-details-description"
+          ></p>
+
+          <button
+            id="productDetailsAddToCart"
+            class="button button-primary product-details-add"
+            type="button"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <noscript>
+      <p class="noscript-message">
+        Bloom Store requires JavaScript. Please enable it to browse products.
+      </p>
+    </noscript>
+  </body>
+</html>
